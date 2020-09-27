@@ -1,0 +1,2 @@
+export const TOGGLE_THEME = 'TOGGLE_THEME';
+export const SELECT_NAVBAR_ITEM = 'SELECT_NAVBAR_ITEM';
