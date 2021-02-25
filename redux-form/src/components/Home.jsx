@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <h1 className='title'> React-Router </h1>
+    <h1 className='title'> Redux Form </h1>
   );
 };
 

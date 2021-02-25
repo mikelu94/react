@@ -1,9 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { themeSelector } from '../selectors/theme';
 import { toggleTheme } from '../actions/theme';
 
-const Navbar = (props) => {
-  const classTheme = props.theme === 'dark' ? 'is-dark' : '';
+const Navbar = () => {
+  const classTheme = useSelector(themeSelector) === 'dark' ? 'is-dark' : '';
+  const dispatch = useDispatch();
+  const handleOnClick = bindActionCreators(toggleTheme, dispatch);
   return (
     <nav className={`navbar ${classTheme}`}>
       <div className='navbar-brand'>
@@ -22,7 +27,8 @@ const Navbar = (props) => {
                 id='theme'
                 type='checkbox'
                 className='switch is-warning is-rounded is-outlined'
-                onClick={props.toggleTheme}
+                onClick={handleOnClick}
+                checked={classTheme===''}
               />
               <label htmlFor='theme'> Theme </label>
             </div>
@@ -33,13 +39,4 @@ const Navbar = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({ theme: state.theme });
-
-const mapDispatchToProps = (dispatch) => ({
-  toggleTheme: () => dispatch(toggleTheme()),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Navbar);
+export default Navbar;

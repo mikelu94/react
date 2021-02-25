@@ -1,8 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-const Section = (props) => {
-  const classTheme = props.theme === 'dark' ? 'is-dark' : '';
+import { themeSelector } from '../selectors/theme';
+
+const Section = () => {
+  const classTheme = useSelector(themeSelector) === 'dark' ? 'is-dark' : '';
   return (
     <section className={`hero ${classTheme} is-fullheight`}>
       <div className='container'>
@@ -12,6 +14,4 @@ const Section = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({ theme: state.theme });
-
-export default connect(mapStateToProps)(Section);
+export default Section;
