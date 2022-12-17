@@ -1,12 +1,12 @@
 import React from 'react';
+import { Outlet } from "react-router-dom";
 import Navbar from './Navbar';
-import Section from './Section';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Section/>
+      <Outlet/>
     </div>
   );
 }
