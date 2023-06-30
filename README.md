@@ -11,11 +11,11 @@ Some react projects that I wrote.
 For any of these projects, just install using `$ npm install` or `$ yarn install`, then run either:
 
 ```bash
-$ yarn start
+$ yarn dev
 ```
 
 or 
 
 ```bash
-$ npm run start
+$ npm run dev
 ```

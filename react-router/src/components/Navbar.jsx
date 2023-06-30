@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className='navbar is-dark'>
       <div className='navbar-brand'>
-        <Link to='/' className='navbar-item'> React-Router </Link>
+        <Link to='/' className='navbar-item'> React Router </Link>
       </div>
       <div className='navbar-menu'>
         <div className='navbar-start'>
